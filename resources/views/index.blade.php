@@ -109,7 +109,8 @@
         <div class="container py-5">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
                 <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">البرامج والمشاريع</div>
-                <h6 class="display-6 mb-5">من خلال شراكتكم معنا نستطيع سوياً تنفيذ مشروعٍ أو حملةٍ تساهم في دعم الأطفال الذين نرعاهم</h6>
+                <h1 class="display-6 mb-5" style="line-height:69px ">
+                    من خلال مشاركتكم معنا نستطيع سوياً تنفيذ مشروعٍ أو حملةٍ تساهم في دعم الأطفال الذين نرعاهم       </h1>
             </div>
             <div class="row g-4 justify-content-center">
                 @foreach ($events->take(3) as $event)
@@ -164,7 +165,7 @@
 
 
     <!-- Donate Start -->
-    <div class="container-fluid donate my-5 py-5" data-parallax="scroll" data-image-src="img/team.jpg">
+    <div class="container-fluid donate my-5 py-5 bg-dark" data-parallax="scroll" data-image-src="img/team.jpg">
 
         <div class="container py-5">
             <div class="row g-5 align-items-center">

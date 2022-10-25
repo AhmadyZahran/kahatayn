@@ -30,8 +30,8 @@
         >
           الفعاليات
         </div>
-        <h1 class="display-6 mb-5">
-        من خلال شراكتكم معنا نستطيع سوياً تنفيذ مشروعٍ أو حملةٍ تساهم في دعم الأطفال الذين نرعاهم       </h1>
+        <h1 class="display-6 mb-5" style="line-height:69px ">
+        من خلال مشاركتكم معنا نستطيع سوياً تنفيذ مشروعٍ أو حملةٍ تساهم في دعم الأطفال الذين نرعاهم       </h1>
       </div>
       <div class="row g-4 justify-content-center my-5"> 
         @foreach ($events as $event)
@@ -43,7 +43,7 @@
               <div
                 class="d-inline-block bg-primary text-white rounded-bottom fs-5 pb-1 px-3 mb-4"
               >
-                <small>{{ $event->date }}</small>
+                <small>{{ explode(' ',$event->date)[0] }}</small>
               </div>
               <h5 class="mb-3">{{ $event->name }}</h5>
               <p>
@@ -88,5 +88,17 @@
       </div>
     </div>
   </div>
+  <script>
+    window.onscroll= ee=> {
+      let navbar=document.getElementById('navbar');
+      if(scrollY>200){
+        navbar.classList.add('bg-dark');
+        navbar.classList.add('fadeIn');
+      } else {
+        navbar.classList.remove('bg-dark');
+
+      }
+    }
+  </script>
   <!-- Causes End -->
   @endsection

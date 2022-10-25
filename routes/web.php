@@ -172,18 +172,21 @@ Route::post('update/{id}',  [VolunteerController::class, 'update']);
 
 //Dashboard
 
-Route::get('/dashboard', function () {
-    return view('dashboard.index');
-})->middleware('can:admin');;
+// Route::get('/dashboard', function () {
+//     return view('dashboard.index');
+// })->middleware('can:admin');
+
+Route::get('/dashboard', [DonationController::class, 'view'])->middleware('can:admin');
+Route::get('/users', [UserController::class, 'view'])->middleware('can:admin');
 
 Route::get('deleteU/{id}', [UserController::class, 'destroy']);
 
-Route::get('admin', function () {
-    return view('dashboard.admin');
+Route::get('/admin', function () {
+    return view('Dashboard.index');
 })->middleware('can:admin');
 
 //admin views in dashboard
-Route::get('events', [EventController::class, 'show'])->middleware('can:admin');;
+Route::get('events', [EventController::class, 'show'])->middleware('can:admin');
 
 
 //view events in inex
@@ -192,7 +195,9 @@ Route::get('/show/events', [EventController::class, 'view']);
 Route::get('admin/dashboard/add_event', function () {
     return view('Dashboard.AddEventdashboard');
     // ->middleware('can:admin');
-})->name('addEvent')->middleware('can:admin');;
+
+})->name('addEvent')->middleware('can:admin');
+
 
 
 // //chatbot

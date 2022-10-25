@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   @include('includes.head')
- <title>home</title>
+ <title>Kahatayn</title>
+
 </head>
 
 <body >

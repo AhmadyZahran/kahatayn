@@ -50,7 +50,7 @@
 
                     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                         <div class="h-100 bg-secondary p-5">
-                            <form action = "/donate/details" method = "post">
+                            <form action = "/donate/details" method = "post" id="submitBtn">
                               @csrf
                                 <div class="row g-3">
                                     <div class="col-12">
@@ -179,7 +179,7 @@
                                     </div>
 
                                     <div class="col-12 ">
-                                        <button type = 'submit' class="btn btn-primary px-5" 
+                                        {{-- <button type = 'submit' class="btn btn-primary px-5" 
                                      
 
                                         name="Donate_bt"style="height: 60px;">
@@ -187,7 +187,24 @@
                                             <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
                                                 <i class="fa fa-arrow-left"></i>
                                             </div>
-                                        </button>
+                                        </button> --}}
+
+                                        <button class="btn btn-primary " type="submit" onclick="event.preventDefault()
+                                    Swal.fire({
+                                          position: 'top-center',
+                                          icon: 'success',                                          
+                                          title: 'جزاك الله خيراً ',
+                                          showConfirmButton: false,
+                                          timer: 1500
+                                        })
+                                        let form = document.getElementById('submitBtn')
+                                        setTimeout(function() {
+                                            form.submit()
+                                        },1550)
+                                    ">تبرع الآن
+                                </button>
+
+
                                     </div>
                                 </div>
                             </form>

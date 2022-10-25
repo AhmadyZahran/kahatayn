@@ -106,6 +106,18 @@ class EventController extends Controller
         $image = base64_encode(file_get_contents($request->file('image')));
         $event = Event::find($id);
 
+        $request->validate(
+            [
+                'name' => ['required'],
+                'description' => ['required'],
+                'date' => ['required'],
+                'location' => ['required'],
+                'image' => ['required'],
+
+            ]
+            );
+
+            // Event::update($field);
         $event->name = $request->name;
         $event->description = $request->description;
         $event->date = $request->date;
@@ -113,6 +125,7 @@ class EventController extends Controller
         $event->image = $image;
 
         $event->save();
+
         // return redirect('/index');
         return redirect('/events');
     }
